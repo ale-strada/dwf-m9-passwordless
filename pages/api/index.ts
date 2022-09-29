@@ -14,5 +14,5 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
   //const user = await User.findOne({ where: { id: "Rkn1wnmIhdIHHFkm4qIy" } });
 
-  res.send("user");
+  res.send("user prueba");
 }
