@@ -17,6 +17,6 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     res.send(user.data);
   } catch (error) {
-    console.error("error");
+    res.send(error);
   }
 }
