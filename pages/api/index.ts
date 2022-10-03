@@ -8,12 +8,12 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
     //   email: req.body.email,
     // });
 
-    const user = await User.create({
-      name: "aleprueba",
-      email: "aleprueba@example.com",
-    });
+    // const user = await User.create({
+    //   name: "aleprueba",
+    //   email: "aleprueba@example.com",
+    // });
 
-    //const user = await User.findOne({ where: { id: "Rkn1wnmIhdIHHFkm4qIy" } });
+    const user = await User.findOne({ where: { id: "Rkn1wnmIhdIHHFkm4qIy" } });
     res.send(user.data);
   } catch (error) {
     console.log(error);
