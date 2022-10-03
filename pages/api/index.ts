@@ -11,9 +11,12 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
   //   name: "aleprueba",
   //   email: "aleprueba@example.com",
   // });
+  try {
+    const user = await User.findOne({ where: { id: "Rkn1wnmIhdIHHFkm4qIy" } });
+    console.log(user.data);
 
-  const user = await User.findOne({ where: { id: "Rkn1wnmIhdIHHFkm4qIy" } });
-  console.log(user.data);
-
-  res.send(user.data);
+    res.send(user.data);
+  } catch (error) {
+    console.error("error");
+  }
 }
