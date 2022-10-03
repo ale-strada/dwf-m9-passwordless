@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
-//import { firestore } from "lib/firestore";
+import { firestore } from "lib/firestore";
 import { User } from "lib/user";
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
-  // const newUSer = await firestore.collection("auth").add({
-  //   email: "prueba@mail.com",
-  // });
+  const newUSer = await firestore.collection("auth").add({
+    email: "prueba2@mail.com",
+  });
 
   // const user = await User.create({
   //   name: "ale",
@@ -14,5 +14,5 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
   //const user = await User.findOne({ where: { id: "Rkn1wnmIhdIHHFkm4qIy" } });
 
-  res.send("user prueba");
+  res.send(newUSer);
 }
