@@ -4,7 +4,7 @@ import { User } from "lib/user";
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   const newUSer = await firestore.collection("auth").add({
-    email: "prueba2@mail.com",
+    email: req.body.email,
   });
 
   // const user = await User.create({
