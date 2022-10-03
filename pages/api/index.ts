@@ -15,7 +15,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     //const user = await User.findOne({ where: { id: "Rkn1wnmIhdIHHFkm4qIy" } });
 
-    res.send(process.env.FIREBASE_CONNECTION);
+    res.send(JSON.parse(process.env.FIREBASE_CONNECTION));
   } catch (error) {
     console.log(error);
     res.send(error);
