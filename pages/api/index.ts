@@ -13,9 +13,9 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
   // });
   try {
     const user = await User.findOne({ where: { id: "Rkn1wnmIhdIHHFkm4qIy" } });
-    console.log(user.data);
-
-    res.send(user.data);
+    //console.log(User);
+    const ver = User.name;
+    res.send(ver);
   } catch (error) {
     res.send(error);
   }
