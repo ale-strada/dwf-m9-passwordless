@@ -4,9 +4,9 @@ import { User } from "lib/user";
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   try {
-    const newUSer = await firestore.collection("auth").add({
-      email: req.body.email,
-    });
+    // const newUSer = await firestore.collection("auth").add({
+    //   email: req.body.email,
+    // });
 
     // const user = await User.create({
     //   name: "ale",
@@ -15,7 +15,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     //const user = await User.findOne({ where: { id: "Rkn1wnmIhdIHHFkm4qIy" } });
 
-    res.send(newUSer);
+    res.send(process.env.FIREBASE_CONNECTION);
   } catch (error) {
     console.log(error);
     res.send(error);
