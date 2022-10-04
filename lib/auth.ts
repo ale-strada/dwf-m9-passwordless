@@ -3,6 +3,7 @@ import { Model } from "./model";
 import gen from "random-seed";
 import { findOrCreateAuth } from "./controllers/auth";
 import addMinutes from "date-fns/addMinutes";
+import isAfter from "date-fns/isAfter";
 
 var seed = "palabra";
 var random = gen.create(seed);
@@ -31,6 +32,24 @@ export class Auth extends Model {
     const newauth = new Auth(newAuthSnap.id);
     newauth.data = data;
     return newauth;
+  }
+  static async verifyCode(email, code) {
+    const auth = await Auth.findByEmail(email);
+    const now = new Date();
+
+    if (code == auth.data.code) {
+      return auth.data;
+    } else {
+      return null;
+    }
+  }
+  static codeExpired(expires) {
+    const now = new Date();
+    if (isAfter(now, expires)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 
