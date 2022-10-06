@@ -4,6 +4,7 @@ import { Order } from "lib/models/order";
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   const { id, topic } = req.query;
+  console.log(id, topic);
 
   if (topic == "merchant_order") {
     console.log("si", topic, id);
