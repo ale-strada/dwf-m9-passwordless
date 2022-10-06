@@ -12,6 +12,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
       const myOrder = new Order(orderId);
       await myOrder.pull();
       myOrder.data.status = "closed";
+      myOrder.data.externalOrder = order;
       await myOrder.push();
       //send email (compra exitosa, procesando envio)
       //email interno (alguien compro algo)
