@@ -1,7 +1,7 @@
-import { firestore } from "./firestore";
+import { firestore } from "../firestore";
 import { Model } from "./model";
 import gen from "random-seed";
-import { findOrCreateAuth } from "./controllers/auth";
+import { findOrCreateAuth } from "../controllers/auth";
 import addMinutes from "date-fns/addMinutes";
 import isAfter from "date-fns/isAfter";
 

@@ -20,4 +20,10 @@ export class Model {
   async create() {
     this.ref.create(this.data);
   }
+  // async createNew(data) {
+  //   const newModelSnap = await this.collection.add(data);
+  //   const newModel = new Model(newModelSnap.id, this.collection);
+  //   newModel.data = data;
+  //   return newModel;
+  // }
 }

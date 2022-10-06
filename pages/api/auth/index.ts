@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { findOrCreateAuth } from "lib/controllers/auth";
-import { sendCode } from "lib/auth";
+import { sendCode } from "lib/models/auth";
 import { sendEmailCode } from "lib/sendgrid";
 import methods from "micro-method-router";
 

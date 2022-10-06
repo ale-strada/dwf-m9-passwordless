@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { generate } from "lib/jwt";
-import { Auth } from "lib/auth";
+import { Auth } from "lib/models/auth";
 import methods from "micro-method-router";
 
 export default methods({

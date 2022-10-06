@@ -1,5 +1,5 @@
-import { User } from "lib/user";
-import { Auth } from "lib/auth";
+import { User } from "lib/models/user";
+import { Auth } from "lib/models/auth";
 
 export async function findOrCreateAuth(email: string): Promise<Auth> {
   const cleanEmail = email.trim().toLocaleLowerCase();
