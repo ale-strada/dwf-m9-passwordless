@@ -4,11 +4,8 @@ import { Order } from "lib/models/order";
 
 export default async function (req: NextApiRequest, res: NextApiResponse) {
   const { id, topic } = req.query;
-  console.log(id, topic);
 
   if (topic == "merchant_order") {
-    console.log("si", topic, id);
-
     const order = await gerMerchantOrder(id);
     if (order.order_status == "paid") {
       const orderId = order.external_reference;
@@ -20,8 +17,6 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
       //send email (compra exitosa, procesando envio)
       //email interno (alguien compro algo)
     }
-  } else {
-    console.log("no", topic, id);
   }
 
   res.send("ok");
